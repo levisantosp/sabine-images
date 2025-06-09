@@ -8,7 +8,7 @@ const calcPlayerOvr = (player: Player) => {
 
 export default async function() {
   console.log("generating cards...")
-  for(const player of getPlayers()) {
+  for(const player of await getPlayers()) {
     if(!player) throw new Error("Invalid player")
     const base = sharp(`assets/cards/${player.id}.png`)
     const overlays: sharp.OverlayOptions[] = [
