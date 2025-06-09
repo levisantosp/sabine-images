@@ -9,5 +9,6 @@ fastify()
 .get("/", () => ({ message: "Hello World" }))
 .register(fastifyStatic, { root: path.resolve("output"), prefix: "/cards/" })
 .listen({
-  port: process.env.PORT
+  port: process.env.PORT,
+  host: process.env.HOST
 })
