@@ -13,7 +13,9 @@ export default async function() {
     const base = sharp(`assets/cards/${player.id}.png`)
     const overlays: sharp.OverlayOptions[] = [
       {
-        input: `assets/roles/${player.role}.png`
+        input: `assets/roles/${player.role}.png`,
+        left: player.role === "INITIATOR" ? 20 : 0,
+        top: 0
       },
       {
         input: `assets/countries/${player.country}.png`,
