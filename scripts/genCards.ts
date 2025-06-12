@@ -65,7 +65,7 @@ export default async function() {
       overlays.push({
         input,
         top: -280,
-        left: i === "0" ? -190 : -140
+        left: i === "0" ? -175 : -135
       })
     }
     const aim = parseInt(player.aim.toString()).toString()
