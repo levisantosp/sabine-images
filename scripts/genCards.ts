@@ -7,6 +7,7 @@ const calcPlayerOvr = (player: Player) => {
 }
 
 export default async function() {
+  const started = Date.now()
   console.log("generating cards...")
   for(const player of await getPlayers()) {
     if(!player) throw new Error("Invalid player")
@@ -14,7 +15,7 @@ export default async function() {
     const overlays: sharp.OverlayOptions[] = [
       {
         input: `assets/roles/${player.role}.png`,
-        left: player.role === "INITIATOR" ? 20 : 0,
+        left: player.role === "initiator" ? 20 : 0,
         top: 0
       },
       {
@@ -128,8 +129,7 @@ export default async function() {
         left: i === "0" ? 150 : 180
       })
     }
-    base.composite(overlays)
-    .toFile(`output/${player.id}.png`)
+    base.composite(overlays).toFile(`output/${player.id}.png`)
   }
-  console.log("cards generated")
+  console.log(`cards generated in ${Date.now() - started}ms`)
 }
