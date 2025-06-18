@@ -5,7 +5,8 @@
   "scripts": {
     "test": "rm -rf test.js && tsc test.ts && node test.js",
     "start": "rm -rf dist output && tsc && mkdir output && node dist/src/index.js",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "dev": "tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
