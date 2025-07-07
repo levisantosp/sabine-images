@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "rm -rf test.js && tsc test.ts && node test.js",
-    "start": "rm -rf dist output && tsc && mkdir output && node dist/src/index.js",
+    "start": "npx eslint . rm -rf dist output && tsc && mkdir output && node dist/src/index.js",
     "build": "rm -rf dist && tsc",
     "dev": "tsx src/index.ts"
   },
@@ -16,13 +16,15 @@
   "dependencies": {
     "@fastify/static": "^8.2.0",
     "@fastify/type-provider-typebox": "^5.1.0",
-    "dotenv": "^16.5.0",
-    "fastify": "^5.3.3",
+    "fastify": "^5.4.0",
     "sharp": "^0.34.2"
   },
   "devDependencies": {
-    "@types/node": "^22.15.30",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.0.10",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1"
   }
 }
