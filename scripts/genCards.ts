@@ -9,9 +9,10 @@ export default async function() {
   for(const player of await getPlayers()) {
     if(!player) throw new Error('Invalid player')
     const base = sharp(`assets/cards/${player.id}.png`)
+    const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
     const overlays: sharp.OverlayOptions[] = [
       {
-        input: `assets/roles/${player.collection}/${player.role}.png`,
+        input: `assets/roles/${collection}/${player.role}.png`,
         left: player.role === 'initiator' ? 20 : 0,
         top: 0
       },
@@ -26,32 +27,32 @@ export default async function() {
         left: 120
       },
       {
-        input: `assets/stats/${player.collection}/aim.png`,
+        input: `assets/stats/${collection}/aim.png`,
         top: 120,
         left: -65
       },
       {
-        input: `assets/stats/${player.collection}/hs.png`,
+        input: `assets/stats/${collection}/hs.png`,
         top: 190,
         left: -65
       },
       {
-        input: `assets/stats/${player.collection}/movement.png`,
+        input: `assets/stats/${collection}/movement.png`,
         top: 260,
         left: -65
       },
       {
-        input: `assets/stats/${player.collection}/aggression.png`,
+        input: `assets/stats/${collection}/aggression.png`,
         top: 120,
         left: 65
       },
       {
-        input: `assets/stats/${player.collection}/acs.png`,
+        input: `assets/stats/${collection}/acs.png`,
         top: 190,
         left: 65
       },
       {
-        input: `assets/stats/${player.collection}/gamesense.png`,
+        input: `assets/stats/${collection}/gamesense.png`,
         top: 260,
         left: 65
       }
@@ -64,7 +65,8 @@ export default async function() {
     for(const i in ovr.split('')) {
       left += 40
       const n = ovr[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/ovr/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/ovr/${n}.png`)
       overlays.push({
         input,
         top: -280,
@@ -79,7 +81,8 @@ export default async function() {
     const gms = parseInt(player.gamesense.toString()).toString()
     for(const i in aim.split('')) {
       const n = aim[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 120,
@@ -88,7 +91,8 @@ export default async function() {
     }
     for(const i in hs.split('')) {
       const n = hs[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 190,
@@ -97,7 +101,8 @@ export default async function() {
     }
     for(const i in mov.split('')) {
       const n = mov[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 260,
@@ -106,7 +111,8 @@ export default async function() {
     }
     for(const i in agg.split('')) {
       const n = agg[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 120,
@@ -115,7 +121,8 @@ export default async function() {
     }
     for(const i in acs.split('')) {
       const n = acs[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 190,
@@ -124,7 +131,8 @@ export default async function() {
     }
     for(const i in gms.split('')) {
       const n = gms[i]
-      const input = path.resolve(`assets/numbers/${player.collection}/stats/${n}.png`)
+      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+      const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 260,
