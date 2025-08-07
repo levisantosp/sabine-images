@@ -9,7 +9,14 @@ export default async function() {
   for(const player of await getPlayers()) {
     if(!player) throw new Error('Invalid player')
     const base = sharp(`assets/cards/${player.id}.png`)
-    const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
+    let collection: string
+    if(player.collection.toLowerCase().startsWith('masters')) {
+      collection = 'masters'
+    }
+    else if(player.collection.toLowerCase().startsWith('champions')) {
+      collection = 'champions'
+    }
+    else collection = player.collection.toLowerCase()
     const overlays: sharp.OverlayOptions[] = [
       {
         input: `assets/roles/${collection}/${player.role}.png`,
@@ -65,7 +72,6 @@ export default async function() {
     for(const i in ovr.split('')) {
       left += 40
       const n = ovr[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/ovr/${n}.png`)
       overlays.push({
         input,
@@ -88,7 +94,6 @@ export default async function() {
     for(const i in aim.split('')) {
       left += 30
       const n = aim[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
@@ -98,7 +103,6 @@ export default async function() {
     }
     for(const i in hs.split('')) {
       const n = hs[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
@@ -108,7 +112,6 @@ export default async function() {
     }
     for(const i in mov.split('')) {
       const n = mov[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
@@ -118,7 +121,6 @@ export default async function() {
     }
     for(const i in agg.split('')) {
       const n = agg[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
@@ -128,7 +130,6 @@ export default async function() {
     }
     for(const i in acs.split('')) {
       const n = acs[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
@@ -138,7 +139,6 @@ export default async function() {
     }
     for(const i in gms.split('')) {
       const n = gms[i]
-      const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
