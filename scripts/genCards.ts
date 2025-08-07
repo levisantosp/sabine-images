@@ -79,14 +79,21 @@ export default async function() {
     const agg = parseInt(player.aggression.toString()).toString()
     const acs = parseInt(player.ACS.toString()).toString()
     const gms = parseInt(player.gamesense.toString()).toString()
+    if(aim.length === 3) {
+      left = -230
+    }
+    else {
+      left = -210
+    }
     for(const i in aim.split('')) {
+      left += 30
       const n = aim[i]
       const collection = player.collection.startsWith('Masters') ? 'masters' : 'base'
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 120,
-        left: i === '0' ? -180 : -150
+        left
       })
     }
     for(const i in hs.split('')) {
