@@ -13,5 +13,5 @@ export type Player = {
   gamesense: number
 }
 export default async function<T extends Player[]>() {
-  return await (await fetch(process.env.API_URL + '/players')).json() as Promise<T>
+  return await (await fetch(process.env.API_URL + "/players")).json() as Promise<T>
 }

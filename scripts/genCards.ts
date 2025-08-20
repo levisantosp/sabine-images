@@ -1,26 +1,26 @@
-import sharp from 'sharp'
-import getPlayers from './getPlayers.ts'
-import path from 'node:path'
-import calcPlayerOvr from './calcPlayerOvr.ts'
+import sharp from "sharp"
+import getPlayers from "./getPlayers.ts"
+import path from "node:path"
+import calcPlayerOvr from "./calcPlayerOvr.ts"
 
 export default async function() {
   const started = Date.now()
-  console.log('generating cards...')
+  console.log("generating cards...")
   for(const player of await getPlayers()) {
-    if(!player) throw new Error('Invalid player')
+    if(!player) throw new Error("Invalid player")
     const base = sharp(`assets/cards/${player.id}.png`)
     let collection: string
-    if(player.collection.toLowerCase().startsWith('masters')) {
-      collection = 'masters'
+    if(player.collection.toLowerCase().startsWith("masters")) {
+      collection = "masters"
     }
-    else if(player.collection.toLowerCase().startsWith('champions')) {
-      collection = 'champions'
+    else if(player.collection.toLowerCase().startsWith("champions")) {
+      collection = "champions"
     }
     else collection = player.collection.toLowerCase()
     const overlays: sharp.OverlayOptions[] = [
       {
         input: `assets/roles/${collection}/${player.role}.png`,
-        left: player.role === 'initiator' ? 20 : 0,
+        left: player.role === "initiator" ? 20 : 0,
         top: 0
       },
       {
@@ -69,7 +69,7 @@ export default async function() {
     if(ovr.length === 3) {
       left = -240
     }
-    for(const i in ovr.split('')) {
+    for(const i in ovr.split("")) {
       left += 40
       const n = ovr[i]
       const input = path.resolve(`assets/numbers/${collection}/ovr/${n}.png`)
@@ -91,7 +91,7 @@ export default async function() {
     else {
       left = -210
     }
-    for(const i in aim.split('')) {
+    for(const i in aim.split("")) {
       left += 30
       const n = aim[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
@@ -101,49 +101,49 @@ export default async function() {
         left
       })
     }
-    for(const i in hs.split('')) {
+    for(const i in hs.split("")) {
       const n = hs[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 190,
-        left: i === '0' ? -180 : -150
+        left: i === "0" ? -180 : -150
       })
     }
-    for(const i in mov.split('')) {
+    for(const i in mov.split("")) {
       const n = mov[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 260,
-        left: i === '0' ? -180 : -150
+        left: i === "0" ? -180 : -150
       })
     }
-    for(const i in agg.split('')) {
+    for(const i in agg.split("")) {
       const n = agg[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 120,
-        left: i === '0' ? 150 : 180
+        left: i === "0" ? 150 : 180
       })
     }
-    for(const i in acs.split('')) {
+    for(const i in acs.split("")) {
       const n = acs[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 190,
-        left: i === '0' ? 150 : 180
+        left: i === "0" ? 150 : 180
       })
     }
-    for(const i in gms.split('')) {
+    for(const i in gms.split("")) {
       const n = gms[i]
       const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
       overlays.push({
         input,
         top: 260,
-        left: i === '0' ? 150 : 180
+        left: i === "0" ? 150 : 180
       })
     }
     base.composite(overlays).toFile(`output/${player.id}.png`)
