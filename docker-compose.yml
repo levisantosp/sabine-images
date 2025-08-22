@@ -7,4 +7,3 @@ services:
     restart: always
     ports:
       - "${PORT}:${PORT}"
-    network_mode: "host"
