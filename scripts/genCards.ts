@@ -1,12 +1,11 @@
 import sharp from "sharp"
-import getPlayers from "./getPlayers.ts"
 import path from "node:path"
-import calcPlayerOvr from "./calcPlayerOvr.ts"
+import { calcPlayerOvr, getPlayers } from "players"
 
 export default async function() {
   const started = Date.now()
   console.log("generating cards...")
-  for(const player of await getPlayers()) {
+  for(const player of getPlayers()) {
     if(!player) throw new Error("Invalid player")
     const base = sharp(`assets/cards/${player.id}.png`)
     let collection: string

@@ -1,5 +1,5 @@
 FROM node:lts
 WORKDIR /app
 COPY . .
-RUN npm install
-CMD ["npm", "start"]
+RUN npm run build
+CMD ["node", "dist/src/index.js"]
