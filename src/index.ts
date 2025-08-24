@@ -1,12 +1,9 @@
 import fastify from "fastify"
-import fastifyStatic from "@fastify/static"
-import genCards from "../scripts/genCards.ts"
-import path from "path"
+import getCard from "../scripts/getCard.ts"
 
-await genCards()
 fastify()
 .get("/", () => ({ message: "Hello World" }))
-.register(fastifyStatic, { root: path.resolve("output"), prefix: "/cards/" })
+.register(getCard)
 .listen({
   port: process.env.PORT,
   host: process.env.HOST
