@@ -7,7 +7,7 @@
     "start": "npx eslint . && rm -rf dist output && mkdir output && tsc && node --env-file=.env .",
     "build": "npx eslint . && rm -rf dist && tsc",
     "dev": "node --experimental-strip-types --env-file=.env src/index.ts",
-    "generate": "node --experimental-strip-types scripts/genCards.ts"
+    "generate": "rm -rf output && mkdir output && node --experimental-strip-types scripts/genCards.ts"
   },
   "keywords": [],
   "author": "",
