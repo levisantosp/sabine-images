@@ -135,13 +135,20 @@ for(const player of getPlayers()) {
       left: i === "0" ? 150 : 180
     })
   }
+  if(gms.length === 3) {
+    left = 105
+  }
+  else {
+    left = 120
+  }
   for(const i in gms.split("")) {
+    left += 30
     const n = gms[i]
     const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
     overlays.push({
       input,
       top: 260,
-      left: i === "0" ? 150 : 180
+      left
     })
   }
   base.composite(overlays).toFile(`output/${player.id}.png`)
