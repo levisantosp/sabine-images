@@ -117,22 +117,32 @@ for(const player of getPlayers()) {
       left: i === "0" ? -180 : -150
     })
   }
+  left = 120
+  if(agg.length === 3) {
+    left = 105
+  }
   for(const i in agg.split("")) {
+    left += 30
     const n = agg[i]
     const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
     overlays.push({
       input,
       top: 120,
-      left: i === "0" ? 150 : 180
+      left
     })
   }
+  left = 120
+  if(agg.length === 3) {
+    left = 105
+  }
   for(const i in acs.split("")) {
+    left += 30
     const n = acs[i]
     const input = path.resolve(`assets/numbers/${collection}/stats/${n}.png`)
     overlays.push({
       input,
       top: 190,
-      left: i === "0" ? 150 : 180
+      left
     })
   }
   if(gms.length === 3) {
