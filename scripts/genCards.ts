@@ -111,13 +111,20 @@ for(const player of getPlayers()) {
       left: i === "0" ? -180 : -150
     })
   }
+  if(mov.length === 3) {
+    left = -230
+  }
+  else {
+    left = -210
+  }
   for(const i in mov.split("")) {
+    left += 30
     const n = mov[i]
     const input = path.resolve(`assets/numbers/${col}/stats/${n}.png`)
     overlays.push({
       input,
       top: 260,
-      left: i === "0" ? -180 : -150
+      left
     })
   }
   left = 120
