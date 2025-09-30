@@ -16,8 +16,7 @@
   "include": [
     "src/**/*.json",
     "env.d.ts",
-    "src",
-    "scripts"
+    "src"
   ],
   "exclude": ["node_modules"]
 }
