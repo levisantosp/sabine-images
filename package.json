@@ -1,13 +1,13 @@
 {
   "name": "sabine-images",
   "version": "1.0.0",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "rm -rf test.js && tsc test.ts && node test.js",
-    "start": "npx eslint . && rm -rf dist output && mkdir output && tsc && node --env-file=.env .",
-    "build": "npx eslint . && rm -rf dist && tsc",
-    "dev": "node --experimental-strip-types --env-file=.env src/index.ts",
-    "generate": "rm -rf output && mkdir output && node --experimental-strip-types scripts/genCards.ts"
+    "test": "node test.ts",
+    "start": "node .",
+    "build": "pnpm eslint . && rm -rf dist && tsc",
+    "dev": "node --env-file=.env src/index.ts",
+    "generate": "node src/scripts/genCards.ts"
   },
   "keywords": [],
   "author": "",
