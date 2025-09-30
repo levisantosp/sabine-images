@@ -15,32 +15,32 @@ importers:
         specifier: ^5.2.0
         version: 5.2.0(@sinclair/typebox@0.34.41)
       fastify:
-        specifier: ^5.5.0
+        specifier: ^5.6.1
         version: 5.6.1
       players:
         specifier: github:levisantosp/sabine-players
         version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/78526da7961f03f144e8320b98b123d0493b8913
       sharp:
-        specifier: ^0.34.3
+        specifier: ^0.34.4
         version: 0.34.4
     devDependencies:
       '@eslint/js':
-        specifier: ^9.34.0
+        specifier: ^9.36.0
         version: 9.36.0
       '@types/node':
-        specifier: ^24.3.0
+        specifier: ^24.6.0
         version: 24.6.0
       eslint:
-        specifier: ^9.34.0
+        specifier: ^9.36.0
         version: 9.36.0
       globals:
-        specifier: ^16.3.0
+        specifier: ^16.4.0
         version: 16.4.0
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
       typescript-eslint:
-        specifier: ^8.42.0
+        specifier: ^8.45.0
         version: 8.45.0(eslint@9.36.0)(typescript@5.9.2)
 
 packages:
