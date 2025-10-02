@@ -19,7 +19,7 @@ importers:
         version: 5.6.1
       players:
         specifier: github:levisantosp/sabine-players
-        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306
+        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac
       sharp:
         specifier: ^0.34.4
         version: 0.34.4
@@ -28,8 +28,8 @@ importers:
         specifier: ^9.36.0
         version: 9.36.0
       '@types/node':
-        specifier: ^24.6.1
-        version: 24.6.1
+        specifier: ^24.6.2
+        version: 24.6.2
       eslint:
         specifier: ^9.36.0
         version: 9.36.0
@@ -294,8 +294,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@24.6.1':
-    resolution: {integrity: sha512-ljvjjs3DNXummeIaooB4cLBKg2U6SPI6Hjra/9rRIy7CpM0HpLtG9HptkMKAb4HYWy5S7HUvJEuWgr/y0U8SHw==}
+  '@types/node@24.6.2':
+    resolution: {integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==}
 
   '@typescript-eslint/eslint-plugin@8.45.0':
     resolution: {integrity: sha512-HC3y9CVuevvWCl/oyZuI47dOeDF9ztdMEfMH8/DW/Mhwa9cCLnK1oD7JoTVGW/u7kFzNZUKUoyJEqkaJh5y3Wg==}
@@ -792,12 +792,12 @@ packages:
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
 
-  pino@9.12.0:
-    resolution: {integrity: sha512-0Gd0OezGvqtqMwgYxpL7P0pSHHzTJ0Lx992h+mNlMtRVfNnqweWmf0JmRWk5gJzHalyd2mxTzKjhiNbGS2Ztfw==}
+  pino@9.13.0:
+    resolution: {integrity: sha512-SpTXQhkQXekIKEe7c887S3lk3v90Q+/HVRZVyNAhe98PQc++6I5ec/R0pciH8/CciXjCoVZIZfRNicbC6KZgnw==}
     hasBin: true
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306:
-    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac:
+    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac}
     version: 1.0.0
 
   prelude-ls@1.2.1:
@@ -1223,7 +1223,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@24.6.1':
+  '@types/node@24.6.2':
     dependencies:
       undici-types: 7.13.0
 
@@ -1540,7 +1540,7 @@ snapshots:
       fast-json-stringify: 6.1.1
       find-my-way: 9.3.0
       light-my-request: 6.6.0
-      pino: 9.12.0
+      pino: 9.13.0
       process-warning: 5.0.0
       rfdc: 1.4.1
       secure-json-parse: 4.0.0
@@ -1754,7 +1754,7 @@ snapshots:
 
   pino-std-serializers@7.0.0: {}
 
-  pino@9.12.0:
+  pino@9.13.0:
     dependencies:
       atomic-sleep: 1.0.0
       on-exit-leak-free: 2.1.2
@@ -1768,7 +1768,7 @@ snapshots:
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306: {}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac: {}
 
   prelude-ls@1.2.1: {}
 
