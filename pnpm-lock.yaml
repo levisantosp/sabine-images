@@ -19,7 +19,7 @@ importers:
         version: 5.6.1
       players:
         specifier: github:levisantosp/sabine-players
-        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/78526da7961f03f144e8320b98b123d0493b8913
+        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306
       sharp:
         specifier: ^0.34.4
         version: 0.34.4
@@ -796,8 +796,8 @@ packages:
     resolution: {integrity: sha512-0Gd0OezGvqtqMwgYxpL7P0pSHHzTJ0Lx992h+mNlMtRVfNnqweWmf0JmRWk5gJzHalyd2mxTzKjhiNbGS2Ztfw==}
     hasBin: true
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/78526da7961f03f144e8320b98b123d0493b8913:
-    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/78526da7961f03f144e8320b98b123d0493b8913}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306:
+    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306}
     version: 1.0.0
 
   prelude-ls@1.2.1:
@@ -1768,7 +1768,7 @@ snapshots:
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/78526da7961f03f144e8320b98b123d0493b8913: {}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/3492f06965655e80d77769ebd7a2eb0539652306: {}
 
   prelude-ls@1.2.1: {}
 
