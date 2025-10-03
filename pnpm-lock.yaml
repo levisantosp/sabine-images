@@ -19,7 +19,7 @@ importers:
         version: 5.6.1
       players:
         specifier: github:levisantosp/sabine-players
-        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac
+        version: https://codeload.github.com/levisantosp/sabine-players/tar.gz/93b78a71290fae07f62d0271931652f55330f001
       sharp:
         specifier: ^0.34.4
         version: 0.34.4
@@ -792,12 +792,12 @@ packages:
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
 
-  pino@9.13.0:
-    resolution: {integrity: sha512-SpTXQhkQXekIKEe7c887S3lk3v90Q+/HVRZVyNAhe98PQc++6I5ec/R0pciH8/CciXjCoVZIZfRNicbC6KZgnw==}
+  pino@9.13.1:
+    resolution: {integrity: sha512-Szuj+ViDTjKPQYiKumGmEn3frdl+ZPSdosHyt9SnUevFosOkMY2b7ipxlEctNKPmMD/VibeBI+ZcZCJK+4DPuw==}
     hasBin: true
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac:
-    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/93b78a71290fae07f62d0271931652f55330f001:
+    resolution: {tarball: https://codeload.github.com/levisantosp/sabine-players/tar.gz/93b78a71290fae07f62d0271931652f55330f001}
     version: 1.0.0
 
   prelude-ls@1.2.1:
@@ -886,8 +886,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  slow-redact@0.3.0:
-    resolution: {integrity: sha512-cf723wn9JeRIYP9tdtd86GuqoR5937u64Io+CYjlm2i7jvu7g0H+Cp0l0ShAf/4ZL+ISUTVT+8Qzz7RZmp9FjA==}
+  slow-redact@0.3.1:
+    resolution: {integrity: sha512-NvFvl1GuLZNW4U046Tfi8b26zXo8aBzgCAS2f7yVJR/fArN93mOqSA99cB9uITm92ajSz01bsu1K7SCVVjIMpQ==}
 
   sonic-boom@4.2.0:
     resolution: {integrity: sha512-INb7TM37/mAcsGmc9hyyI6+QR3rR1zVRu36B0NeGXKnOOLiZOfER5SA+N7X7k3yUYRzLWafduTDvJAfDswwEww==}
@@ -1540,7 +1540,7 @@ snapshots:
       fast-json-stringify: 6.1.1
       find-my-way: 9.3.0
       light-my-request: 6.6.0
-      pino: 9.13.0
+      pino: 9.13.1
       process-warning: 5.0.0
       rfdc: 1.4.1
       secure-json-parse: 4.0.0
@@ -1754,7 +1754,7 @@ snapshots:
 
   pino-std-serializers@7.0.0: {}
 
-  pino@9.13.0:
+  pino@9.13.1:
     dependencies:
       atomic-sleep: 1.0.0
       on-exit-leak-free: 2.1.2
@@ -1764,11 +1764,11 @@ snapshots:
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
       safe-stable-stringify: 2.5.0
-      slow-redact: 0.3.0
+      slow-redact: 0.3.1
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
 
-  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/2f9beee3ac69f3f9ae93f5da305192dbfe05f6ac: {}
+  players@https://codeload.github.com/levisantosp/sabine-players/tar.gz/93b78a71290fae07f62d0271931652f55330f001: {}
 
   prelude-ls@1.2.1: {}
 
@@ -1851,7 +1851,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  slow-redact@0.3.0: {}
+  slow-redact@0.3.1: {}
 
   sonic-boom@4.2.0:
     dependencies:
