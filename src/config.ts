@@ -120,6 +120,46 @@ export const config = {
         }
       }
     },
+    'valorant masters': {
+      role: {
+        left: -330,
+        top: -200
+      },
+      country: {
+        top: 564,
+        left: 345
+      },
+      team: {
+        top: 860,
+        left: 285
+      },
+      stats: {
+        aim: {
+          top: 220,
+          left: -120
+        },
+        hs: {
+          top: 350,
+          left: -120
+        },
+        movement: {
+          top: 480,
+          left: -120
+        },
+        aggression: {
+          top: 220,
+          left: 120
+        },
+        acs: {
+          top: 350,
+          left: 120
+        },
+        gamesense: {
+          top: 480,
+          left: 120
+        }
+      }
+    },
     champions: {
       role: {
         left: 0,
@@ -177,6 +217,10 @@ export const config = {
     champions: {
       left: -215,
       top: -280
+    },
+    'valorant masters': {
+      left: -450,
+      top: -510
     }
   },
   stats: {
@@ -282,6 +326,32 @@ export const config = {
       gamesense: {
         left: 120,
         top: 260
+      }
+    },
+    'valorant masters': {
+      aim: {
+        left: -410,
+        top: 220
+      },
+      hs: {
+        left: -410,
+        top: 350
+      },
+      movement: {
+        left: -410,
+        top: 480
+      },
+      aggression: {
+        left: 225,
+        top: 220
+      },
+      acs: {
+        left: 225,
+        top: 350
+      },
+      gamesense: {
+        left: 225,
+        top: 480
       }
     }
   }
