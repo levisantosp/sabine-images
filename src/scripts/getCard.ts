@@ -1,25 +1,29 @@
-import { Type, type TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
-import type { FastifyInstance } from 'fastify'
+import { Elysia } from 'elysia'
+import constants from 'node:constants'
+import { access, readFile } from 'node:fs/promises'
 import path from 'node:path'
-import fs from 'node:fs'
 
-export default function(fastify: FastifyInstance) {
-  fastify.withTypeProvider<TypeBoxTypeProvider>()
-    .get('/cards/:id', {
-      schema: {
-        params: Type.Object({
-          id: Type.String()
-        })
-      }
-    }, (req, reply) => {
-      const cardPath = path.resolve('output', req.params.id)
+export const getCard = new Elysia()
+  .get('/cards/:id', async({ params, set }) => {
+    const cardPath = path.resolve('output', params.id)
 
-      if(fs.existsSync(cardPath)) {
-        reply.type('image/png').send(fs.readFileSync(cardPath))
+    try {
+      await access(cardPath, constants.R_OK)
+
+      const buffer = await readFile(cardPath)
+
+      set.headers['content-type'] = 'image/png'
+
+      return buffer
+    }
+
+    catch(e) {
+      if(!(e instanceof Error)) {
+        console.error(e)
       }
 
-      else {
-        reply.code(404).send({ error: 'Unknown card' })
-      }
-    })
-}
+      set.status = 404
+
+      return { error: 'Unknown card' }
+    }
+  })

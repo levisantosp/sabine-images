@@ -1,15 +1,13 @@
-FROM node:lts-alpine
-
-RUN npm i -g pnpm
+FROM oven/bun:1-alpine
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml /app/
+COPY package.json bun.lock /app/
 COPY . .
 
-RUN pnpm i --frozen-lockfile
-RUN pnpm build
+RUN bun i --frozen-lockfile
+RUN bun compile
 RUN rm -rf output && mkdir output
 RUN node dist/scripts/genCards.js
 
-CMD ["pnpm", "start"]
+CMD ["bun", "start"]

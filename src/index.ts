@@ -1,10 +1,9 @@
-import fastify from 'fastify'
-import getCard from './scripts/getCard.ts'
+import { Elysia } from 'elysia'
+import { getCard } from './scripts/getCard.ts'
 
-fastify()
-  .get('/', () => ({ message: 'Hello World' }))
-  .register(getCard)
-  .listen({
-    port: process.env.PORT,
-    host: process.env.HOST
-  })
+new Elysia()
+  .get('/', { message: 'Hello, world!' })
+  .use(getCard)
+  .listen(process.env.PORT)
+
+console.log(`HTTP server running at ${process.env.PORT}`)
